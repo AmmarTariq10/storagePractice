@@ -7,13 +7,28 @@ import { DataServiceProvider } from '../../providers/data-service/data-service';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  inputValue: any;
-  strArray=[]
+
+
+
   constructor(public navCtrl: NavController, public DS: DataServiceProvider) {
     }
   
- 
+    
+    setItem(inputValue){
+      if(inputValue){
+      this.DS.setVal(inputValue)
+      console.log(inputValue + ' is set in storage')
+      inputValue=null  
+      }else{
+        console.log('null values are not acceptable')
+      }
+    }
 
+
+    getItems(){
+     let storageItems = this.DS.getVal();
+     console.log(storageItems)
+    }
 
  
 

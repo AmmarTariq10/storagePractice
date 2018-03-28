@@ -9,7 +9,8 @@
 <ion-content padding>
 <ion-label> Input Value </ion-label>
 <ion-input placeholder="inputText" [(ngModel)]='inputValue' clearInput='true'></ion-input> 
-<button (click)='setVal(inputValue)' ion-button> Add Value </button>
+<button (click)='setItem(inputValue)' ion-button> Add Value </button>
+<button (click)='getItems()' ion-button> get Value </button>
 
 <ion-scroll scrollY="true">
 

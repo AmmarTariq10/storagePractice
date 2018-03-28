@@ -7,6 +7,7 @@ import { IonicStorageModule  } from '@ionic/storage'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DataServiceProvider } from '../providers/data-service/data-service';
+import { HttpClient,HttpHandler, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -25,9 +27,11 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
     
   ],
   providers: [
+    
     StatusBar,
     SplashScreen,
     DataServiceProvider,
+    HttpClient,    
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataServiceProvider
   ]
