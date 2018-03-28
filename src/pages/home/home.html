@@ -7,13 +7,21 @@
 </ion-header>
 
 <ion-content padding>
-<ion-label> Input Value </ion-label>
-<ion-input placeholder="inputText" [(ngModel)]='inputValue' clearInput='true'></ion-input> 
-<button (click)='setItem(inputValue)' ion-button> Add Value </button>
-<button (click)='getItems()' ion-button> get Value </button>
 
-<ion-scroll scrollY="true">
 
-</ion-scroll>
+
+<ion-list>
+  <ion-item>
+      <ion-label> Input Value </ion-label>
+      <ion-input placeholder="inputText" [(ngModel)]='inputValue' clearInput='true'></ion-input> 
+  </ion-item> 
+  <ion-item>
+      <ion-buttons><button (click)='setItem(this.inputValue)' ion-button> Add Value </button></ion-buttons>
+      <ion-buttons><button (click)='getItems()' ion-button> get Value </button></ion-buttons>
+  </ion-item>
+ <ion-item *ngFor="let s of itemsToDisplay">
+     {{s}}       
+</ion-item>
+</ion-list>
 </ion-content>
  
